@@ -6,8 +6,6 @@ FROM
 INNER JOIN 
     trips AS t ON t.cab_id = c.cab_id
 WHERE
-    t.start_ts::date IN ('2017-11-15', '2017-11-16')
+    (c.company_name LIKE '%Yellow%' OR c.company_name LIKE '%Blue%') AND (t.start_ts::date BETWEEN '2017-11-01' AND '2017-11-07')
 GROUP BY 
-    c.company_name
-ORDER BY 
-    trips_amount DESC;
+    c.company_name;
