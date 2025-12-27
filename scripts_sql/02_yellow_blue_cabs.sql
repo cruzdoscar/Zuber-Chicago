@@ -1,3 +1,4 @@
+-- Solicitud para obtener la cantidad de viajes para cada empresa de taxis cuyo nombre contenga las palabras 'Yellow' o 'Blue' del 1 al 7 de noviembre de 2017
 SELECT 
     c.company_name,
     COUNT(t.trip_id) AS trips_amount
